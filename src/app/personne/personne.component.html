@@ -1,0 +1,43 @@
+<h1>Angular Forms</h1>
+
+<p><a href="https://github.com/charroux/AngularBasis/blob/master/src/app/app.module.ts">app.module.ts</a>:</p>
+<code>
+import {{ '{' }} FormsModule, ReactiveFormsModule } from '@angular/forms';<br>
+FormsModule added to imports
+</code>
+
+<p><a href="">Person class</a></p>
+
+<p><a href="">personne component</a></p>
+
+<p><a href="">personne view</a></p>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="age">
+      Address
+    </label>
+    <input id="age" type="number" formControlName="age">
+  </div>
+
+  <button class="button" type="submit">Add a person</button>
+
+</form>
+
+List of persons:
+<table style="width:100%">
+<div *ngFor="let person of persons">
+  <tr>
+    <td>{{person.name}}</td>
+    <td>{{person.age}}</td>
+  </tr>
+</div>
+</table>
