@@ -1,6 +1,26 @@
 
 # AngularBasis
 
+The class to be displayed: https://github.com/charroux/AngularBasis/blob/master/src/app/personne/person.ts
+
+The Angular form: https://github.com/charroux/AngularBasis/blob/master/src/app/personne/personne.component.html
+
+The related component: https://github.com/charroux/AngularBasis/blob/master/src/app/personne/personne.component.ts
+
+FormsModule and ReactiveFormsModule should be included into app.module.ts should contains:
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+...
+imports: [
+    
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ]
+
+https://github.com/charroux/AngularBasis/blob/master/src/app/app.module.ts
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
 ## Development server
