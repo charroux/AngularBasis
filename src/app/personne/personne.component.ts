@@ -15,8 +15,9 @@ export class PersonneComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
-          name: '',
-          age: ''
+          name: 'default value',
+          age: '20',
+          gender: 'female'
         });
   }
 
@@ -27,7 +28,7 @@ export class PersonneComponent implements OnInit {
       // Process checkout data here
       console.warn('Your order has been submitted', customerData);
       this.persons.push(customerData);
-      this.checkoutForm.reset();
+      // this.checkoutForm.reset();
     }
 
 }
