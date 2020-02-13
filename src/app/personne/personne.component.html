@@ -6,8 +6,6 @@
 
 <h1>Form without service:</h1>
 
-<a href="">Service class</a>
-
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithoutService(checkoutForm.value)">
 
   <div>
@@ -48,6 +46,8 @@ List of persons:
 </table>
 
 <h1>Form with service:</h1>
+
+<a href="https://github.com/charroux/AngularBasis/blob/master/src/app/person.service.ts">Service class</a><br><br>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithService(checkoutForm.value)">
 
