@@ -10,7 +10,9 @@ The related component: https://github.com/charroux/AngularBasis/blob/master/src/
 FormsModule and ReactiveFormsModule should be included into app.module.ts should contains:
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 ...
+
 imports: [
     
     BrowserModule,

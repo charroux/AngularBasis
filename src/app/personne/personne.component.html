@@ -1,18 +1,12 @@
-<h1>Angular Forms</h1>
 
-<p><a href="https://github.com/charroux/AngularBasis/blob/master/src/app/app.module.tsx²">app.module.ts</a>:</p>
-<code>
-import {{ '{' }} FormsModule, ReactiveFormsModule } from '@angular/forms';<br>
-FormsModule added to imports
-</code>
-
-<p><a href="">Person class</a></p>
 
 <p><a href="">personne component</a></p>
 
 <p><a href="">personne view</a></p>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<h1>Form without service:</h1>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithoutService(checkoutForm.value)">
 
   <div>
     <label for="name">
@@ -50,3 +44,33 @@ List of persons:
   </tr>
 </div>
 </table>
+
+<h1>Form with service:</h1>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithService(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="age">
+      Age
+    </label>
+    <input id="age" type="number" formControlName="age">
+  </div>
+
+  <div>
+    <label for="gender">
+      Gender
+    </label>
+    <input type="radio" value='male' formControlName="gender" >Male
+    <input type="radio" value='female' formControlName="gender">Female
+  </div>
+
+  <button class="button" type="submit">Add a person</button>
+
+</form>
