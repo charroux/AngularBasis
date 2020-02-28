@@ -9,17 +9,18 @@ The related component: https://github.com/charroux/AngularBasis/blob/master/src/
 
 FormsModule and ReactiveFormsModule should be included into app.module.ts should contains:
 
+```javascript
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 ...
 
 imports: [
-    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ]
+```
 
 https://github.com/charroux/AngularBasis/blob/master/src/app/app.module.ts
 
@@ -55,11 +56,15 @@ This project is provided with a Dockerfile:
 
 Use the following command to build a docker image: 
 
-'''java
+```javascript
 docker build -t angularbasis:dev .
-'''
+```
 
-Launch the docker container with: docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm angularbasis:dev
+Launch the docker container with: 
+
+```javascript
+docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm angularbasis:dev
+```
 
 Then test the app at: http://localhost:4201/
 
@@ -67,9 +72,17 @@ Don't forget the character . at the en of the line (this docker command looks fo
 
 ### Stop the docker container
 
-Get the container ID with: docker ps
+Get the container ID with: 
 
-Then stop the container with: docker stop 19ba42399129
+```javascript
+docker ps
+```
+
+Then stop the container with: 
+
+```javascript
+docker stop 19ba42399129
+```
 
 relace 19ba42399129 with the Container ID.
 
