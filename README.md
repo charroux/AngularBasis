@@ -49,5 +49,28 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## 
+## Docker 
+
+This project is provided with a Dockerfile: 
+
+Use the following command to build a docker image: 
+
+'''java
+docker build -t angularbasis:dev .
+'''
+
+Launch the docker container with: docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm angularbasis:dev
+
+Then test the app at: http://localhost:4201/
+
+Don't forget the character . at the en of the line (this docker command looks for the Dockerfile in the current folder).
+
+### Stop the docker container
+
+Get the container ID with: docker ps
+
+Then stop the container with: docker stop 19ba42399129
+
+relace 19ba42399129 with the Container ID.
+
 
