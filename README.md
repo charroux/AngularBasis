@@ -84,6 +84,6 @@ Then stop the container with:
 docker stop 19ba42399129
 ```
 
-relace 19ba42399129 with the Container ID.
+replace 19ba42399129 with the Container ID.
 
 
