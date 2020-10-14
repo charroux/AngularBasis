@@ -1,78 +1,30 @@
 
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Age:
+    <input type="number" formControlName="age">
+  </label>
+
+  <label>
+    Gender:
+    <input type="radio" value='male' formControlName="gender" >Male
+    <input type="radio" value='female' formControlName="gender">Female
+  </label>
+
+  <button type="submit" [disabled]="!personForm.valid">Submit</button>
+
+</form>
 
 <p><a href="https://github.com/charroux/AngularBasis/blob/master/src/app/personne/personne.component.ts">personne component</a></p>
 
+<p>The component deleguates to a <a href="https://github.com/charroux/AngularBasis/blob/master/src/app/person.service.ts">service</a> the addind of a person.</p>
+
 <p><a href="https://github.com/charroux/AngularBasis/blob/master/src/app/personne/personne.component.html">personne view</a></p>
 
-<h1>Form without service:</h1>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithoutService(checkoutForm.value)">
-
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
-  </div>
-
-  <div>
-    <label for="age">
-      Age
-    </label>
-    <input id="age" type="number" formControlName="age">
-  </div>
-
-  <div>
-    <label for="gender">
-      Gender
-    </label>
-    <input type="radio" value='male' formControlName="gender" >Male
-    <input type="radio" value='female' formControlName="gender">Female
-  </div>
-
-  <button class="button" type="submit">Add a person</button>
-
-</form>
-
-List of persons:
-<table style="width:100%">
-<div *ngFor="let person of persons">
-  <tr>
-    <td>{{person.name}}</td>
-    <td>{{person.age}}</td>
-    <td>{{person.gender}}</td>
-  </tr>
-</div>
-</table>
-
-<h1>Form with service:</h1>
-
-<a href="https://github.com/charroux/AngularBasis/blob/master/src/app/person.service.ts">Service class</a><br><br>
-
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmitWithService(checkoutForm.value)">
-
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
-  </div>
-
-  <div>
-    <label for="age">
-      Age
-    </label>
-    <input id="age" type="number" formControlName="age">
-  </div>
-
-  <div>
-    <label for="gender">
-      Gender
-    </label>
-    <input type="radio" value='male' formControlName="gender" >Male
-    <input type="radio" value='female' formControlName="gender">Female
-  </div>
-
-  <button class="button" type="submit">Add a person</button>
-
-</form>

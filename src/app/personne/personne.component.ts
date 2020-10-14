@@ -11,31 +11,22 @@ import { PersonService } from '../person.service';
 })
 export class PersonneComponent implements OnInit {
 
-  checkoutForm;
-  persons: Person[]  = [];
+  personForm = new FormGroup({
+    name: new FormControl(''),
+    age: new FormControl(''),
+    gender: new FormControl(''),
+  });
 
-  constructor(private formBuilder: FormBuilder, private personService: PersonService) {
-    this.checkoutForm = this.formBuilder.group({
-          name: 'default value',
-          age: '20',
-          gender: 'female'
-        });
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.personForm.value);
+    this.personService.addPerson(this.personForm.value);
+  }
+
+  constructor(private personService: PersonService) {
   }
 
   ngOnInit() {
   }
 
-  onSubmitWithoutService(customerData) {
-      // Process checkout data here
-      console.warn('Your person has been submitted', customerData);
-      this.persons.push(customerData);
-      // this.checkoutForm.reset();
-    }
-
-  onSubmitWithService(customerData) {
-      // Process checkout data here
-      console.warn('Your person has been submitted via a service', customerData);
-      this.personService.addPerson(customerData);
-      // this.checkoutForm.reset();
-    }
 }

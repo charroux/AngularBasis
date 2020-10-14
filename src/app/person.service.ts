@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { Person } from './person';
 
@@ -11,11 +12,12 @@ export class PersonService {
 
   constructor() { }
 
-  getPersons(): Promise<Person[]>{
-    return Promise.resolve(this.persons);
+  getPersons(): Observable<any[]> {
+      return of(this.persons);
   }
 
   addPerson(person): void {
     this.persons.push(person);
+    console.warn(this.persons);
   }
 }
